@@ -28,7 +28,7 @@ while True:
      if Att > 2:
        RandCard=SelectedCard
  else:
-   if Att == random.randint(120,200):
+   if Att == random.randint(60,100):
        RandCard = SelectedCard
    while RandCard==SelectedCard:
      try:
