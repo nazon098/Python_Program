@@ -2,7 +2,7 @@ import random
 class SameCardError(Exception):
   pass
 Att=1
-Ice_Cream=0
+Won=0
 print("Select Random number  Cards between 1 and 10")
 ID=input("First,enter your name: ")
 if ID == "":
@@ -42,7 +42,7 @@ while True:
    print('That's bad!')
  else:
    print('You won!!')
-   Ice_Cream+=1
+   Won+=1
  response=input('Try again? ')
  if response.lower() == 'yes' or response.lower()=='ye' or response.lower() == "" or response.lower() == 'y:
    Att += 1
@@ -50,5 +50,5 @@ while True:
  else:
    print(f"{ID}'s Information")
    print(f'Total Attempts:{Att}')
-   print(f'You won:{Ice_Cream}')
+   print(f'You won:{Won}')
    break
