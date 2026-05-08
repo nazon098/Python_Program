@@ -3,25 +3,24 @@ class SameCardError(Exception):
   pass
 Att=1
 Ice_Cream=0
-print("1에서 10까지의 무작위 숫자를 찍어서 맞춰 보세요!")
-print("맞추면 아이스크림 사줌")
-ID=input("먼저 이름을 입력하세요: ")
+print("Select Random number  Cards between 1 and 10")
+ID=input("First,enter your name: ")
 if ID == "":
-  ID="(공백)"
+  ID="(Blank)"
 if ID.lower() == 'nazon':
- print(f"환영합니다 {ID} 님!")
+ print(f"Welcome {ID}!")
 else:
- print(f'환영합니다 {ID} 님')
+ print(f'Welcome {ID}')
 while True:
  while True:
   try:
-   SelectedCard = int(input("숫자를 선택하세요."))
+   SelectedCard = int(input("Choose number."))
    if SelectedCard>=1 and SelectedCard<=10:
      break
    else:
-     print("1~10사이의 숫자를 입력하세요")
+     print("Enter number between 1 and 10")
   except ValueError:
-     print("'숫자'를 입력하세요")
+     print("Enter 'Number'")
  RandCard = random.randint(1,10)
  if ID.lower()=="nazon":
    if random.randint(1,10)>=6:
@@ -37,19 +36,19 @@ while True:
          raise SameCardError
      except SameCardError:
        continue
- print(f'내가고른카드:{SelectedCard}')
+ print(f'Selected Card:{SelectedCard}')
  print(f'무작위의 카드:{RandCard}')
  if RandCard!=SelectedCard:
-   print('안타깝네요!')
+   print('That's bad!')
  else:
-   print('아이스크림 당첨!!')
+   print('You won!!')
    Ice_Cream+=1
- response=input('다시 할까요? ')
- if response == '네' or response=='예' or response == "":
+ response=input('Try again? ')
+ if response.lower() == 'yes' or response.lower()=='ye' or response.lower() == "" or response.lower() == 'y:
    Att += 1
    continue
  else:
-   print(f"{ID} 님의 기록")
-   print(f'총 시도:{Att}')
-   print(f'얻은 아이스크림:{Ice_Cream}')
+   print(f"{ID}'s Information")
+   print(f'Total Attempts:{Att}')
+   print(f'You won:{Ice_Cream}')
    break
