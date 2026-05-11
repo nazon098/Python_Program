@@ -37,7 +37,7 @@ while True:
      except SameCardError:
        continue
  print(f'Selected Card:{SelectedCard}')
- print(f'무작위의 카드:{RandCard}')
+ print(f'Random Card:{RandCard}')
  if RandCard!=SelectedCard:
    print('That's bad!')
  else:
